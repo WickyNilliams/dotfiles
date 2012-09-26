@@ -144,3 +144,14 @@ function unquarantine() {
 		xattr -r -d "$attribute" "$@"
 	done
 }
+
+
+#nodejs shiznit
+
+function noded() {
+	node --debug "$@"
+}
+
+function nodedb() {
+	node --debug-brk "$@"
+}
