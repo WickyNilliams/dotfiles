@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+it("${1:spec_name}", function() {
+	
+});
+]]></content>
+	<tabTrigger>jasmine-it</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

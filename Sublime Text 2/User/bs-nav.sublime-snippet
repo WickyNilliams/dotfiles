@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+	
+.navbar>.navbar-inner>a.brand{${1:BrandTitle}}+ul.nav>(.active>a{Home})+.divider-vertical+li*${2:2}>a{Link}$3
+
+]]></content>
+	<tabTrigger>bs-nav</tabTrigger>
+	<scope>text.html</scope>
+    <description>bootstrap nav zen</description>
+</snippet>

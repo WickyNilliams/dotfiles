@@ -1,0 +1,11 @@
+{
+	// Core preferences
+	"preferences": {
+
+		// Class name’s element separator.
+		"bem.elementSeparator" : "__", 
+
+		// Class name’s modifier separator.
+		"bem.modifierSeparator": "--"
+	}
+}

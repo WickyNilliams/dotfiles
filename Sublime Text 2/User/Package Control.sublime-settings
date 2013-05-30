@@ -1,0 +1,24 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"Alignment",
+		"DetectSyntax",
+		"DocBlockr",
+		"emmet-sublime",
+		"GitGutter",
+		"Jasmine",
+		"LESS",
+		"MarkdownBuild",
+		"Package Control",
+		"Pretty JSON",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SyncedSideBar",
+		"Theme - Soda"
+	],
+	"repositories":
+	[
+		"https://github.com/sergeche/emmet-sublime"
+	]
+}
