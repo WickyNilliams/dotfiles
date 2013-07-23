@@ -9,12 +9,12 @@
 		"GitGutter",
 		"Jasmine",
 		"LESS",
+		"Liquid",
 		"MarkdownBuild",
 		"Package Control",
 		"Pretty JSON",
 		"SublimeCodeIntel",
 		"SublimeLinter",
-		"SyncedSideBar",
 		"Theme - Soda"
 	],
 	"repositories":

@@ -27,6 +27,6 @@
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
-	"theme": "Soda Dark.sublime-theme",
-	"soda_folder_icons": true
+	"soda_folder_icons": true,
+	"theme": "Soda Dark.sublime-theme"
 }
