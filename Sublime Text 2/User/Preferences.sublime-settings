@@ -18,12 +18,12 @@
 		"deprecated",
 		"node_modules"
 	],
+	"tab_size" : 2,
 	"font_size": 13.0,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"SublimeCodeIntel"
+		"Vintage"
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
