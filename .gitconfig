@@ -1,3 +1,7 @@
+[user]
+	name = WickyNilliams
+	email = WickyNilliams@MBA
+
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph
@@ -28,16 +32,12 @@
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 
-[apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	editor = subl
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -52,9 +52,9 @@
 	old = red bold
 	new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+	added = green
+	changed = yellow
+	untracked = red
 #[merge]
 	# Include summaries of merged commits in newly created merge commit messages
 #	log = true
