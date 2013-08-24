@@ -14,3 +14,5 @@ Thumbs.db
 .Trashes
 
 node_modules
+Package\ Control.cache
+Package\ Control.system-ca-bundle
