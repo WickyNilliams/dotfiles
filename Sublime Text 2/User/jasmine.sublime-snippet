@@ -1,25 +1,23 @@
 <snippet>
-	<content><![CDATA[
-/*global describe: true, beforeEach: true, afterEach: true, it: true, expect: true */
-
+  <content><![CDATA[
 describe("${1:spec_description}", function() {
 
-	beforeEach(function() {
-		//setup
-	});
+  beforeEach(function() {
+    //setup
+  });
 
-	afterEach(function() {
-		//teardown
-	});
+  afterEach(function() {
+    //teardown
+  });
 
-	it("${2:spec}", function() {
+  it("${2:spec}", function() {
+    $0
+  });
 
-	});
-	
 });
 
 ]]></content>
-	<tabTrigger>jasmine</tabTrigger>
-	<scope>source.js</scope>
+  <tabTrigger>jasmine</tabTrigger>
+  <scope>source.js</scope>
     <description>jasmine boilerplate</description>
 </snippet>
