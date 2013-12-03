@@ -296,7 +296,8 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#CFCFC2</string>
+                <!-- <string>#CFCFC2</string> -->
+                <string>#E6DB74</string>
             </dict>
         </dict>
 
