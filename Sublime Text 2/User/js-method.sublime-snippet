@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+${1:methodName} : function (${2:params}) {
+  $0
+}${10:,}
+]]></content>
+  <tabTrigger>method</tabTrigger>
+  <scope>source.js</scope>
+    <description>new instance method</description>
+</snippet>
