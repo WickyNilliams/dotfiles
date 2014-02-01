@@ -386,6 +386,14 @@ defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 ###############################################################################
+# iPhoto                                                                      #
+# #############################################################################
+
+# Disable "faces" detection
+defaults write com.apple.iPhoto PKFaceDetectionEnabled 0
+
+
+###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
 
