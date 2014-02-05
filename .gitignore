@@ -13,6 +13,5 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
+# never want node modules committed
 node_modules
-Package\ Control.cache
-Package\ Control.system-ca-bundle
