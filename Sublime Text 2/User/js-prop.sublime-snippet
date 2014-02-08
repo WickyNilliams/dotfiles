@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+${1:prop} : ${2:true}${10:,}
+]]></content>
+  <tabTrigger>prop</tabTrigger>
+  <scope>source.js</scope>
+    <description>new instance property</description>
+</snippet>
