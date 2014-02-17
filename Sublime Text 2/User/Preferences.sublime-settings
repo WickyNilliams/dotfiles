@@ -1,6 +1,5 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/Monokai Soda.tmTheme",
 	"draw_white_space": "all",
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
@@ -30,6 +29,7 @@
 	"line_padding_top": 1,
 	"soda_folder_icons": true,
 	"tab_size": 2,
-	"theme": "Soda Dark.sublime-theme",
+  "theme": "Spacegray Eighties.sublime-theme",
+  "color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"translate_tabs_to_spaces": true
 }
