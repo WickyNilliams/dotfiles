@@ -83,3 +83,7 @@
 
 [pretty]
 	fancy = "%C(yellow)%h%Creset -%C(blue)%d%Creset %s %Cgreen(%cr)%Creset %C(dim white)%an%C(reset)"
+
+# rebase by default when pulling
+[pull]
+	rebase = true
