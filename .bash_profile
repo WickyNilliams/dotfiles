@@ -46,3 +46,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # Fix my stupid errors
 eval "$(thefuck --alias)"
+
+# git tab completion!
+source ~/.git-completion.sh
