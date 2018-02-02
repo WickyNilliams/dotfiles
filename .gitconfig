@@ -37,7 +37,7 @@
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-	editor = subl -w
+	editor = code --wait
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
