@@ -37,7 +37,7 @@
 	# clear unstaged changes
 	clear = checkout -- .
 	# remove merged branches
-	cleanup = git branch --merged | grep -E -v "^\*\s+(master|dev)" | xargs git branch -d && git remote prune origin
+	cleanup = !"git branch --merged | grep -E -v '^\*\s+(master|dev)' | xargs git branch -d && git remote prune origin"
 
 
 [core]
