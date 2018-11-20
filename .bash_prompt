@@ -6,7 +6,6 @@
 # nicolas@host: ~/.dotfiles on master [+!?$]
 # $
 
-# Taken from @necolas dotfiles (https://github.com/necolas/dotfiles/blob/master/shell/bash_prompt)
 # Screenshot: http://i.imgur.com/DSJ1G.png
 # iTerm2 prefs: import Solarized theme (disable bright colors for bold text)
 # Color ref: http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
@@ -130,12 +129,8 @@ set_prompts() {
     PS1="\[\033]0;\w\007\]"
 
     PS1+="\n" # newline
-    PS1+="\[$userStyle\]\u" # username
-    PS1+="\[$reset$white\]@"
-    PS1+="\[$hostStyle\]\h" # host
-    PS1+="\[$reset$white\]: "
     PS1+="\[$green\]\w" # working directory
-    PS1+="\$(prompt_git \"$white on $cyan\")" # git repository details
+    PS1+="\$(prompt_git \"$reset on $white\")" # git repository details
     PS1+="\n"
     PS1+="\[$reset$white\]\$ \[$reset\]" # $ (and reset color)
 

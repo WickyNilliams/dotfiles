@@ -4,7 +4,7 @@
 
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	# Fancy log
 	lg = log --graph --pretty=fancy
 	# View the current working tree status using the short format
@@ -26,6 +26,8 @@
 	branches = branch -a
 	remotes = remote -v
 	stashes = stash list
+	# Amend the currently staged files to the latest commit
+	amend = commit --amend --reuse-message=HEAD
 	# Credit an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
@@ -60,14 +62,6 @@
 	added = green
 	changed = yellow
 	untracked = red
-#[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-#	log = true
-
-# Use `origin` as the default remote on the `master` branch in all cases
-#[branch "master"]
-#	remote = origin
-#	merge = refs/heads/master
 
 # URL shorthands
 [url "git@github.com:"]
@@ -93,6 +87,8 @@
 [pull]
 	rebase = true
 
-# only push current branch
 [push]
-	simple = true
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
