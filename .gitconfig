@@ -25,12 +25,17 @@
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
+	stashes = stash list
 	# Credit an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
+	# clear unstaged changes
+	clear = checkout -- .
+	# remove merged branches
+	cleanup = git branch --merged | grep -E -v "^\*\s+(master|dev)" | xargs git branch -d && git remote prune origin
 
 
 [core]
@@ -87,3 +92,7 @@
 # rebase by default when pulling
 [pull]
 	rebase = true
+
+# only push current branch
+[push]
+	simple = true
