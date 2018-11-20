@@ -40,6 +40,7 @@ brew install homebrew/php/php56 --with-gmp
 brew install git
 brew install node
 brew install tree
+brew install thefuck
 
 # Remove outdated versions from the cellar
 brew cleanup
