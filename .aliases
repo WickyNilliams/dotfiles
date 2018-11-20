@@ -126,5 +126,5 @@ alias camera="sudo killall VDCAssistant"
 
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
-#because i'm always grepping my history
+# because i'm always grepping my history
 alias greph="history | grep"
