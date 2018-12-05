@@ -35,12 +35,31 @@ brew install grep
 brew install openssh
 brew install homebrew/php/php56 --with-gmp
 
-
 # Install everything else
 brew install git
 brew install node
 brew install tree
 brew install thefuck
+brew install rbenv
+brew install yarn
+brew install git-standup
+
+# Cask installs
+brew cask install 1password
+brew cask install google-chrome
+brew cask install firefox
+brew cask install docker
+brew cask install slack
+brew cask install the-unarchiver
+brew cask install visual-studio-code
+brew cask install spotify
+brew cask install iterm2
+brew cask install flux
+brew cask install transmission
+brew cask install divvy
+brew cask install alfred
+brew cask install sourcetree
+brew cask install nordvpn
 
 # Remove outdated versions from the cellar
 brew cleanup
