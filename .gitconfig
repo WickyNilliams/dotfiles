@@ -36,9 +36,8 @@
 	undopush = push -f origin HEAD^:master
 	# clear unstaged changes
 	clear = checkout -- .
-	# remove merged branches
-	cleanup = !"git branch --merged | grep -E -v '^\*\s+(master|dev)' | xargs git branch -d && git remote prune origin"
-
+	# remove merged branches (local and remote)
+	cleanup = "!f() { git branch --merged | grep -v '\\*\\|master\\|develop' | xargs git branch -d; git remote prune origin; }; f"
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
@@ -49,6 +48,7 @@
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -82,6 +82,9 @@
 
 [pretty]
 	fancy = "%C(yellow)%h%Creset -%C(blue)%d%Creset %s %Cgreen(%cr)%Creset %C(dim white)%an%C(reset)"
+
+[fetch]
+	prune = true
 
 # rebase by default when pulling
 [pull]
