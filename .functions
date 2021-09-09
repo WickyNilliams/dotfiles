@@ -136,3 +136,8 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# returns the id of the process listening on given port
+function port() {
+	lsof -n -i TCP:$1 -s TCP:LISTEN -t
+}
