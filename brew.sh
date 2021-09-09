@@ -43,6 +43,9 @@ brew install thefuck
 brew install rbenv
 brew install yarn
 brew install git-standup
+brew install tldr
+brew install devd
+brew install jq
 
 # Cask installs
 brew cask install 1password
@@ -60,6 +63,9 @@ brew cask install divvy
 brew cask install alfred
 brew cask install sourcetree
 brew cask install nordvpn
+brew cask install keepingyouawake
+brew cask install quicklook-json
+brew cask install vlc
 
 # Remove outdated versions from the cellar
 brew cleanup
