@@ -37,7 +37,9 @@
 	# clear unstaged changes
 	clear = checkout -- .
 	# remove merged branches (local and remote)
-	cleanup = "!f() { git branch --merged | grep -v '\\*\\|master\\|develop' | xargs git branch -d; git remote prune origin; }; f"
+	cleanup = "!f() { git branch --merged | grep -v '\\*\\|master\\|main\\|develop' | xargs git branch -d; git remote prune origin; }; f"
+	# update a branch by rebasing against another branch, defaulting to main
+	update = "!u() { git checkout ${1:-main}; git pull; git checkout -; git rebase ${1:-main}; }; u"
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
