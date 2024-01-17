@@ -36,7 +36,7 @@
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 	# clear unstaged changes
-	clear = checkout -- .
+	clear = restore .
 	# remove merged branches (local and remote)
 	cleanup = "!f() { git branch --merged | grep -v '\\*\\|master\\|main\\|develop' | xargs git branch -d; git remote prune origin; }; f"
 	# update a branch by rebasing against another branch, defaulting to main
