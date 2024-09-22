@@ -10,7 +10,7 @@ function doIt() {
 		--exclude ".osx" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
-		--exclude "LICENSE-MIT.txt" \
+		--exclude "Snazzy.itermcolors" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
 }
