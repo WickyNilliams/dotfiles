@@ -1,24 +1,41 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
-cd "$(dirname "${BASH_SOURCE}")";
-
-git pull origin master;
+# -D remove parsed args from $@
+# -F fail on unknown
+# -A use associative array `opts` for args
+zparseopts -D -F -A opts -force -skip-brew -skip-git
 
 function doIt() {
-	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude ".osx" \
-		--exclude "bootstrap.sh" \
-		--exclude "README.md" \
-		--exclude "Snazzy.itermcolors" \
-		-avh --no-perms . ~;
-	source ~/.bash_profile;
+	if [[ -v opts[--skip-git] ]]; then
+		echo "Skipping git"
+	else
+		echo "Pulling latest changes from git..."
+		git pull origin master || exit 1
+	fi
+
+	if [[ -v opts[--skip-brew] ]]; then
+		echo "Skipping brew"
+	else
+		echo "Installing packages from brew..."
+		./brew.sh
+	fi
+
+	echo "Copying config files and folder to home dir..."
+	cp .gitconfig ~/.gitconfig
+	cp .zshrc ~/.zshrc
+	cp .zprofile ~/.zprofile
+	cp .zshenv ~/.zshenv
+	cp -R .config ~/.config
+
+	# see: https://github.com/sharkdp/bat?tab=readme-ov-file#adding-new-themes
+	echo "configuring bat:"
+	bat cache --build
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+if [[ -v opts[--force] ]]; then
 	doIt;
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+	read "REPLY?This may overwrite existing files in your home directory. Are you sure? (y/n) "
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt;
