@@ -41,7 +41,6 @@
 	# update a branch by rebasing against another branch, defaulting to main
 	update = "!u() { git switch ${1:-main}; git pull; git switch -; git rebase ${1:-main}; }; u"
 
-
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
@@ -87,3 +86,5 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+	# save having to push with -u flag
+	autoSetupRemote = true
