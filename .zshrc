@@ -16,7 +16,11 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # enable starship prompt
 eval "$(starship init zsh)"
 
+# enable fzf key bindings
+source <(fzf --zsh)
+
 # aliases
+alias g="git"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"

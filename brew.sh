@@ -17,7 +17,6 @@ brew install wget --enable-iri
 
 # Install more recent versions of some macOS tools.
 brew install grep
-brew install openssh
 
 # Install everything else
 brew install git
@@ -29,8 +28,11 @@ brew install tldr
 brew install devd
 brew install jq
 brew install starship
+brew install fzf
+brew install bat
 
 # Cask installs
+brew install --cask font-fira-code
 brew install --cask 1password
 brew install --cask google-chrome
 brew install --cask firefox
