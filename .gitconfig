@@ -1,6 +1,7 @@
 [user]
 	name = WickyNilliams
 	email = WickyNilliams@users.noreply.github.com
+	primaryBranch = main
 
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits
@@ -11,18 +12,14 @@
 	s = status -s
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
-	# Clone a repository including all submodules
-	c = clone --recursive
 	# Commit all changes
 	ca = !git add -A && git commit -av
-	# Switch to a branch, creating it if necessary
-	go = switch -c
-	# Show verbose output about tags, branches or remotes
+	# Some shortcuts because I'm lazy
+	a = add .
+	c = commit -m
+	p = push
 	co = switch
+	go = switch -c
 	# useful commands for listing things
 	tags = tag -l
 	branches = branch -a
@@ -37,9 +34,10 @@
 	# clear unstaged changes
 	clear = restore .
 	# remove merged branches (local and remote)
-	cleanup = "!f() { git branch --merged | grep -v '\\*\\|master\\|main\\|develop' | xargs git branch -d; git remote prune origin; }; f"
-	# update a branch by rebasing against another branch, defaulting to main
-	update = "!u() { git switch ${1:-main}; git pull; git switch -; git rebase ${1:-main}; }; u"
+	cleanup = "!git branch -vv | grep ': gone]' | awk '{print $1}' | fzf --multi --sync --bind start:select-all | xargs git branch -d; git remote prune origin;"
+	# switch to primary branch, pull, switch back, rebase
+	update = !"git switch ${1:-$(git config user.primaryBranch)}; git pull; git switch -; git rebase -; }"
+	b = !git branch --sort=-authordate | fzf --height=20% --query="$(git config user.branchPrefix)" --no-sort --preview 'git show --color=always {-1}' --bind 'enter:become(git switch {-1})' --preview 'git log --pretty=oneline develop..{-1} --color=always'
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
