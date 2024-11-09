@@ -16,7 +16,7 @@ brew install zsh
 brew install findutils
 
 # Install wget with IRI support
-brew install wget --enable-iri
+brew install wget
 
 # Install more recent versions of some macOS tools.
 brew install grep
@@ -34,6 +34,7 @@ brew install starship
 brew install fzf
 brew install bat
 brew install fnm
+brew install ast-grep
 
 # Cask installs
 brew install --cask font-fira-code
@@ -49,6 +50,10 @@ brew install --cask alfred
 brew install --cask keepingyouawake
 brew install --cask quicklook-json
 brew install --cask vlc
+brew install --cask appcleaner
+brew install --cask dropbox
+brew install --cask obsidian
+brew install --cask sublime-merge
 
 # Remove outdated versions from the cellar
 brew cleanup
