@@ -36,6 +36,8 @@ else
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt;
+	else
+		echo "Exiting without bootstrapping"
 	fi;
 fi;
 unset doIt;
