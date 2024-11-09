@@ -21,14 +21,11 @@ function doIt() {
 	fi
 
 	echo "Copying config files and folder to home dir..."
-	cp .gitconfig ~/.gitconfig
-	cp .zshrc ~/.zshrc
-	cp .zprofile ~/.zprofile
-	cp .zshenv ~/.zshenv
+	cp .{gitconfig,zshrc,zprofile,zshenv} ~/
 	cp -R .config ~/.config
 
 	# see: https://github.com/sharkdp/bat?tab=readme-ov-file#adding-new-themes
-	echo "configuring bat:"
+	echo "Configuring bat..."
 	bat cache --build
 }
 

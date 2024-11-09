@@ -19,9 +19,17 @@ eval "$(starship init zsh)"
 # enable fzf key bindings
 source <(fzf --zsh)
 
+# configure fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # aliases
 alias g="git"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias greph="history | grep"
+
+# anything we don't want commited to source control
+if [ -f ~/.extras ]; then
+  source ~/.extras
+fi

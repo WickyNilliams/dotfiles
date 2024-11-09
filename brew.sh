@@ -30,6 +30,7 @@ brew install jq
 brew install starship
 brew install fzf
 brew install bat
+brew install fnm
 
 # Cask installs
 brew install --cask font-fira-code
