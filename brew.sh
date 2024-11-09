@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Disable analytics
+brew analytics off
+
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -37,13 +40,10 @@ brew install --cask font-fira-code
 brew install --cask 1password
 brew install --cask google-chrome
 brew install --cask firefox
-brew install --cask docker
 brew install --cask the-unarchiver
 brew install --cask visual-studio-code
 brew install --cask spotify
 brew install --cask iterm2
-brew install --cask flux
-brew install --cask transmission
 brew install --cask rectangle
 brew install --cask alfred
 brew install --cask keepingyouawake
