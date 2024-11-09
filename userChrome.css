@@ -1,0 +1,22 @@
+/**
+ * 1. go to `about:support` and click on `Profile Folder` -> `Open Folder`
+ * 2. create a folder named `chrome` if it doesn't exist
+ * 3. copy this file there
+ * 4. enable `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config`
+ * 5. in firefox menu, go to "More Tools" -> "Customize Toolbar", and enable "Title Bar"
+ * 5. restart Firefox
+ */
+
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar>.toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+  visibility: collapse !important;
+}
+
+/* Remove title section from Sideberry */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]>#sidebar-header {
+  display: none
+}
