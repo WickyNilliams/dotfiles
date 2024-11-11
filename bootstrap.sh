@@ -21,7 +21,7 @@ function doIt() {
 	fi
 
 	echo "Copying config files and folder to home dir..."
-	cp .{gitconfig,zshrc,zprofile,zshenv} ~/
+	cp .{gitconfig,.gitattributes,zshrc,zprofile,zshenv} ~/
 	cp -R .config ~/.config
 
 	# see: https://github.com/sharkdp/bat?tab=readme-ov-file#adding-new-themes

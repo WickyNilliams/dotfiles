@@ -60,8 +60,9 @@
 	changed = yellow
 	untracked = red
 
-# setup vscode as tool for various operations
 [core]
+	attributesfile = ~/.gitattributes
+	# setup vscode as tool for various operations
 	editor = code --wait
 [diff]
 	tool = vscode
