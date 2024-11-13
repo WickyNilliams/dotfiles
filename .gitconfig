@@ -36,7 +36,7 @@
 	# remove merged branches (local and remote)
 	cleanup = "!git branch -vv | grep ': gone]' | awk '{print $1}' | fzf --multi --sync --bind start:select-all | xargs git branch -d; git remote prune origin;"
 	# switch to primary branch, pull, switch back, rebase
-	update = !"git switch ${1:-$(git config user.primaryBranch)}; git pull; git switch -; git rebase -; }"
+	update = !"git switch ${1:-$(git config user.primaryBranch)}; git pull; git switch -; git rebase -;"
 	# list recent branches with fzf
 	b = !git branch --sort=-authordate | fzf --height=20% --query="$(git config user.branchPrefix)" --no-sort --bind 'enter:become(git switch {-1})' --preview 'git log --pretty=oneline develop..{-1} --color=always'
 	# interactive cherry pick with fzf
