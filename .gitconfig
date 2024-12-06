@@ -34,7 +34,7 @@
 	# clear unstaged changes
 	clear = restore .
 	# remove merged branches (local and remote)
-	cleanup = "!git branch -vv | grep ': gone]' | awk '{print $1}' | fzf --multi --sync --bind start:select-all | xargs git branch -d; git remote prune origin;"
+	cleanup = "!git branch -vv | grep ': gone]' | awk '{print $1}' | fzf --multi --sync --bind start:select-all | xargs git branch -D; git remote prune origin;"
 	# switch to primary branch, pull, switch back, rebase
 	update = !"git switch ${1:-$(git config user.primaryBranch)}; git pull; git switch -; git rebase -;"
 	# list recent branches with fzf
