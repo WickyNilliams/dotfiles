@@ -18,7 +18,7 @@
 	a = add .
 	c = commit -m
 	p = push
-	co = switch
+	co = !"co () { git switch ${1:-$(git config user.primaryBranch)}; }; co"
 	go = switch -c
 	# useful commands for listing things
 	tags = tag -l
