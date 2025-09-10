@@ -30,8 +30,9 @@
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	# conveniences for rebasing
-	rbc = rebase --continue
-	rba = rebase --abort
+	ri = rebase -i
+	rc = rebase --continue
+	ra = rebase --abort
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 	# clear unstaged changes
