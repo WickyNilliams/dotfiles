@@ -42,8 +42,8 @@
 	update = !"git switch ${1:-$(git config user.primaryBranch)}; git pull; git switch -; git rebase -;"
 	# list recent branches with fzf
 	b = !git branch --sort=-authordate | fzf --height=20% --query="$(git config user.branchPrefix)" --no-sort --bind 'enter:become(git switch {-1})' --preview 'git log --pretty=oneline develop..{-1} --color=always'
-	# interactive cherry pick with fzf
-	icp = !git branch | fzf --sync | awk '{print $1}' | xargs git log --pretty=oneline | fzf --sync --multi | awk '{print $1}' | xargs git cherry-pick
+	# interactive multiselect cherry pick with fzf
+	icp = !git branch --sort=-authordate | fzf --height=20% --query="$(git config user.branchPrefix)" --no-sort --sync | awk '{print $1}' | xargs git log --pretty=oneline | fzf --sync --multi --height=20% --no-sort --preview 'git show {1} --color=always' | awk '{print $1}' | xargs git cherry-pick
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
