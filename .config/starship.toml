@@ -17,4 +17,4 @@ symbol = "[⬢](bold green) "
 disabled = true
 
 [docker_context]
-disabled = true%
+disabled = true
