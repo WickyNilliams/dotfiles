@@ -19,7 +19,7 @@
 	c = commit -m
 	p = push
 	co = !"co () { git switch ${1:-$(git config user.primaryBranch)}; }; co"
-	go = switch -c
+	go = "!go() { git switch -c $(git config user.branchPrefix)${1}; }; go"
 	# useful commands for listing things
 	tags = tag -l
 	branches = branch -a
@@ -87,9 +87,6 @@
 	# rebase by default when pulling
 	rebase = true
 
-[rebase]
-	autoStash = true
-
 [push]
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
@@ -97,3 +94,8 @@
 	followTags = true
 	# save having to push with -u flag
 	autoSetupRemote = true
+
+[rebase]
+	autoStash = true
+	# update refs for stacked branches
+	updateRefs = true
